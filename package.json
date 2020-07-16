@@ -1,0 +1,17 @@
+{
+  "name": "icomoon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.mjs && node test.mjs",
+    "test": "node createFonts.mjs && node unzip.mjs && node clean.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^5.0.0",
+    "unzipper": "^0.10.11"
+  }
+}
