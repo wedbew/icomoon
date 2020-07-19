@@ -20,6 +20,7 @@ export default class CreateFonts
 
   async uploadImages()
   {
+
     console.log(`Number of images: ${this.files.length}`);
     this.browser = await puppeteer.launch({
       'headless': false,

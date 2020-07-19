@@ -7,7 +7,6 @@ export default class Clean
   {
     this.data();
     this.moveFile();
-    setTimeout(() => this.unzip(), 3000);
   }
 
   data()
@@ -17,10 +16,11 @@ export default class Clean
     this.output     = './icomoon';
   }
 
-  moveFile()
+  async moveFile()
   {
-    fs.rename(this.path, this.file, (err) => {
-      if (err) throw err
+    fs.rename(this.path, this.file, (err) => {       
+      if (err) throw new Error(err) 
+      this.unzip();
     })
   }
 
@@ -28,6 +28,7 @@ export default class Clean
   {
     fs.createReadStream(this.file)
       .pipe(unzipper.Extract({ path: this.output }))
+
   }
 
 }
